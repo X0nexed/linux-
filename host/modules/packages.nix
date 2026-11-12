@@ -9,5 +9,8 @@
     telegram-desktop
     zip
     unzip
+    
+    discord
+    vscode
   ];
 }
