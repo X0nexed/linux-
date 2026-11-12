@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    vscode-nixpkgs.url = "github:NixOS/nixpkgs/0012ddac735b05b2d26bb6586faec3c69c802d87";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -23,6 +24,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = [
         ./hardware-configuration.nix
         ./host/host.nix

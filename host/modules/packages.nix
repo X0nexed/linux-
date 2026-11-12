@@ -1,4 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }:
+let
+  vscodePkgs = import inputs.vscode-nixpkgs {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    config.allowUnfree = true;
+  };
+in {
   environment.systemPackages = with pkgs; [
     git
     wget
@@ -11,6 +17,6 @@
     unzip
     
     discord
-    vscode
+    vscodePkgs.vscode
   ];
 }

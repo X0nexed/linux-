@@ -84,10 +84,28 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
-        "noctalia-greeter": "noctalia-greeter"
+        "noctalia-greeter": "noctalia-greeter",
+        "vscode-nixpkgs": "vscode-nixpkgs"
+      }
+    },
+    "vscode-nixpkgs": {
+      "locked": {
+        "lastModified": 1794205513,
+        "narHash": "sha256-xb8JCS8iWUogE2lwqQziYmlBzUn5Hqv7zfU9zvWTIOE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0012ddac735b05b2d26bb6586faec3c69c802d87",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0012ddac735b05b2d26bb6586faec3c69c802d87",
+        "type": "github"
       }
     }
   },
   "root": "root",
   "version": 7
 }
+
