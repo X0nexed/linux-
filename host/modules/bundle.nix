@@ -2,7 +2,7 @@
   imports = [
     ./bootloader.nix
     ./users.nix
-    ./inir.nix
+    ./desktop.nix
     ./firefox.nix
     ./packages.nix
     ./audio.nix

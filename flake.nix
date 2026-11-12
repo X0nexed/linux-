@@ -1,5 +1,5 @@
 {
-  description = "NixOS iNiR Desktop";
+  description = "NixOS Niri and Noctalia Desktop";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
@@ -9,20 +9,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    inir = {
-      url = "github:snowarch/iNiR/edca6cc95c7881ba152472759ba071f4e2c9867e";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/v5.4.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter/199fb7fe64a34bec44bf059de323f78a4ed122a8";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, inir, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hardware-configuration.nix
         ./host/host.nix
 
-        inir.nixosModules.default
+        inputs.noctalia-greeter.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
