@@ -1,5 +1,6 @@
 {
   imports = [
+    ./steam.nix
     ./bootloader.nix
     ./users.nix
     ./desktop.nix
