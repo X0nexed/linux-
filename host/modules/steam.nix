@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  # Разрешаем установку несвободных программ (нужно для Steam)
+  # Разрешаем установку несвободных программ
   nixpkgs.config.allowUnfree = true;
 
   # Включаем Steam и открываем порты для Remote Play
@@ -10,9 +10,14 @@
     remotePlay.openFirewall = true;
   };
 
-  # Включаем 32-битную графику (нужно для запуска игр)
+  # Включаем 32-битную графику
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
+
+  # Устанавливаем мост XWayland для запуска Steam в Niri
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+  ];
 }
