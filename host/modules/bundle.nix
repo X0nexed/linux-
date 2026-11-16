@@ -10,5 +10,6 @@
     ./nvidia.nix
     ./gc.nix
     ./plymouth.nix
+    ./Sidra.nix
   ];
 }

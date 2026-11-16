@@ -19,6 +19,11 @@
       url = "github:noctalia-dev/noctalia-greeter/199fb7fe64a34bec44bf059de323f78a4ed122a8";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  # Добавьте эту строку:
+  sidra.url = "github:wimpysworld/sidra";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
