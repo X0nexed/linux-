@@ -20,10 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  # Добавьте эту строку:
-  sidra.url = "github:wimpysworld/sidra";
-    };
+    sidra.url = "github:wimpysworld/sidra"; # только эта новая строка
+    
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
